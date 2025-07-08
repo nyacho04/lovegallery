@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+:root {
+  --violeta-pastel: #C8C3E6;
+  --rosa-empolvado: #F2D3DC;
+  --crema-claro: #FFF6E5;
+  --azul-cielo-pastel: #B8E0F1;
+}
+
+body {
+  background: linear-gradient(135deg, #B8E0F1 0%, #C8C3E6 100%);
+  margin: 0;
+  font-family: 'Quicksand', 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+  min-height: 100vh;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.collage-layout {
+  position: relative;
+  min-height: 100vh;
+  padding: 160px 0 80px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.penguin-center {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  gap: 32px;
+}
+
+.speech-bubble {
+  position: static;
+  background: #fff;
+  border: 3px solid #222;
+  border-radius: 40px 40px 40px 40px/50px 50px 40px 40px;
+  padding: 22px 36px;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: #222;
+  font-size: 1.3em;
+  box-shadow: 2px 4px 12px #0002;
+  min-width: 120px;
+  max-width: 260px;
+  text-align: left;
+  z-index: 3;
+  align-self: flex-start;
+  margin-left: -18px;
+}
+.speech-bubble::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 180px;
+  bottom: 38px;
+  width: 38px;
+  height: 38px;
+  background: #fff;
+  border: 3px solid #222;
+  border-radius: 50%;
+  border-top: none;
+  border-right: none;
+  box-shadow: -2px 6px 8px #0001;
+  transform: rotate(25deg);
+  z-index: 2;
+}
+@media (max-width: 700px) {
+  .penguin-center {
+    gap: 10px;
+  }
+  .penguin-img {
+    width: 110px;
+  }
+  .speech-bubble {
+    font-size: 1em;
+    padding: 12px 16px;
+    min-width: 80px;
+    max-width: 140px;
+    margin-left: -8px;
+  }
+  .speech-bubble::after {
+    left: 100px;
+    bottom: 18px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.penguin-img {
+  width: 180px;
+  z-index: 2;
+}
+@media (max-width: 700px) {
+  .penguin-img {
+    width: 110px;
+  }
+}
+.frames-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  z-index: 2;
+}
+
+.titulo-cartoon {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: var(--violeta-pastel);
+  font-size: 2.6em;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 0 var(--rosa-empolvado), 4px 4px 0 var(--azul-cielo-pastel);
+  letter-spacing: 2px;
+}
+
+.photo-frame {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.sticker {
+  position: absolute;
+  width: 90px;
+  z-index: 3;
+  filter: drop-shadow(0 2px 8px #0002);
+  transition: transform 0.2s;
+  animation: bounce 3.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) scale(1) rotate(-2deg); }
+  50% { transform: translateY(-10px) scale(1.08) rotate(2deg); }
+}
+
+.sticker-1 {
+  top: 40px;
+  left: 30px;
+  transform: rotate(-12deg);
+}
+.sticker-2 {
+  top: 120px;
+  right: 40px;
+  transform: rotate(8deg);
+}
+.sticker:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+@media (max-width: 600px) {
+  .frames-container {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .sticker-1, .sticker-2 {
+    width: 60px;
+    left: 10px;
+    right: 10px;
+    top: unset;
+  }
+}
+
+.snoopy {
+  position: fixed;
+  top: 20vh;
+  width: 180px;
+  z-index: 10;
+  opacity: 0.92;
+  pointer-events: none;
+}
+.snoopy-left {
+  left: 0;
+}
+.snoopy-right {
+  right: 0;
+}
+@media (max-width: 900px) {
+  .snoopy {
+    width: 110px;
+    top: 100vh;
+  }
+}
