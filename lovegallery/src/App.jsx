@@ -173,7 +173,7 @@ function App() {
 
   return (
     <div className={"collage-layout" + (fadeIn ? " fade-in" : "") }>
-      {/* Brillitos laterales */}
+      {}
       <div className="side-sparkles left">
         <span className="sparkle star"></span>
         <span className="sparkle circle"></span>
@@ -188,7 +188,7 @@ function App() {
         <span className="sparkle circle"></span>
         <span className="sparkle star"></span>
       </div>
-      {/* Modal para foto ampliada */}
+      {}
       {modalOpen && (
         <div className="photo-modal" onClick={closeModal}>
           <div className={`photo-modal-content ${modalAnim}`} onClick={e => e.stopPropagation()}>
@@ -254,7 +254,7 @@ function App() {
             </button>
           </div>
         </div>
-        {/* Globo de texto eliminado */}
+        {}
       </div>
       <div className="frames-container fade-in">
         {fotos.map((foto, idx) => (
@@ -267,12 +267,12 @@ function App() {
           />
         ))}
       </div>
-      {/* Stickers decorativos */}
+      {}
       <img src={muneco1} alt="Sticker Muñeco 1" className="sticker sticker-1 fade-in" />
       <img src={muneco2} alt="Sticker Muñeco 2" className="sticker sticker-2 fade-in" />
       <img src={snoopy1} alt="Snoopy corazón" className="snoopy snoopy-left fade-in" />
       <img src={snoopy2} alt="Snoopy abrazo" className="snoopy snoopy-right fade-in" />
-      {/* Stickers kitty debajo de los snoopy */}
+      {}
       <img src={kitty1} alt="Kitty 1" className="kitty-sticker kitty-1 fade-in" />
       <img src={kitty2} alt="Kitty 2" className="kitty-sticker kitty-2 fade-in" />
     </div>
