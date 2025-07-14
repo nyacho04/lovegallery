@@ -25,6 +25,7 @@ import kitty2 from './assets/kitty2.png';
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import cancion from './assets/Monsieur Periné - Nuestra Canción.mp3';
+import cancion2 from './assets/Impacto.mp3';
 
 const fotos = [
   { src: foto1, alt: 'Foto 1', mensaje: 'amo esta foto, salis dormidita pero no se ve tu cara, no te podes quejar 😀' },
@@ -59,6 +60,8 @@ function App() {
   const [muted, setMuted] = useState(true);
   const [showMusicMsg, setShowMusicMsg] = useState(true);
   const msgTimeoutRef = useRef(null);
+  const canciones = [cancion, cancion2];
+  const [currentSongIdx, setCurrentSongIdx] = useState(() => Math.floor(Math.random() * canciones.length));
 
   useEffect(() => {
     setTimeout(() => setFadeIn(true), 50);
@@ -91,20 +94,21 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const audioEl = new window.Audio(cancion);
+    const audioEl = new window.Audio(canciones[currentSongIdx]);
     audioEl.volume = 0.15;
     audioEl.loop = false;
     setAudio(audioEl);
     audioEl.play().catch(() => setAudioError(true));
-    audioEl.addEventListener('ended', () => {
-      audioEl.currentTime = 0;
-      audioEl.play();
-    });
+    const handleEnded = () => {
+      const nextIdx = (currentSongIdx + 1) % canciones.length;
+      setCurrentSongIdx(nextIdx);
+    };
+    audioEl.addEventListener('ended', handleEnded);
     return () => {
       audioEl.pause();
-      audioEl.removeEventListener('ended', () => {});
+      audioEl.removeEventListener('ended', handleEnded);
     };
-  }, []);
+  }, [currentSongIdx]);
 
   useEffect(() => {
     if (audio) audio.muted = muted;
@@ -192,7 +196,12 @@ function App() {
       {modalOpen && (
         <div className="photo-modal" onClick={closeModal}>
           <div className={`photo-modal-content ${modalAnim}`} onClick={e => e.stopPropagation()}>
-            <button className="photo-modal-close" onClick={closeModal} aria-label="Cerrar modal">&times;</button>
+            <button className="photo-modal-close" onClick={closeModal} aria-label="Cerrar modal">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="5" y1="5" x2="15" y2="15" stroke="#a14d4d" strokeWidth="1.8" strokeLinecap="round"/>
+                <line x1="15" y1="5" x2="5" y2="15" stroke="#a14d4d" strokeWidth="1.8" strokeLinecap="round"/>
+              </svg>
+            </button>
             <img src={modalPhoto} alt={modalAlt} className="photo-modal-img" />
             <div className="photo-modal-message">{modalMessage}</div>
             <div className="photo-modal-nav">

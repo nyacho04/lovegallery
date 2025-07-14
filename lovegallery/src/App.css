@@ -368,9 +368,9 @@ body.scrolled::after {
   position: absolute;
   top: -18px;
   left: -18px;
-  background: #f2d3dc;
+  background: #fff6e5;
   color: #a14d4d;
-  border: none;
+  border: 1.5px solid #ffb3c6;
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -380,20 +380,22 @@ body.scrolled::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: none;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.15s;
   z-index: 10;
-  box-shadow: none;
+  box-shadow: 0 1px 4px #ffb3c644;
   padding: 0;
   outline: none;
 }
 .photo-modal-close:active, .photo-modal-close:focus {
-  background: #f2d3dc;
+  background: #fff6e5;
   color: #a14d4d;
   outline: none;
 }
 .photo-modal-close:hover {
-  background: #c8c3e6;
-  color: #a14d4d;
+  background: #ffb3c6;
+  color: #fff;
+  border: 1.5px solid #ff4d7a;
+  transform: scale(1.08);
 }
 
 .photo-modal-next {
