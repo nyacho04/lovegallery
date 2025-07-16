@@ -20,6 +20,12 @@ import foto13 from './assets/foto13.jpg';
 import foto14 from './assets/foto14.jpg';
 import foto15 from './assets/foto15.jpg';
 import foto16 from './assets/foto16.jpg';
+import foto17 from './assets/foto17.jpg';
+import foto18 from './assets/foto18.jpg';
+import foto19 from './assets/foto19.jpg';
+import foto20 from './assets/foto20.jpg';
+import foto21 from './assets/foto21.jpg';
+import foto22 from './assets/foto22.jpg';
 import kitty1 from './assets/kitty1.png';
 import kitty2 from './assets/kitty2.png';
 import './App.css';
@@ -44,6 +50,12 @@ const fotos = [
   { src: foto14, alt: 'Foto 14', mensaje: 'la mejor chocotorta que comí' },
   { src: foto15, alt: 'Foto 15', mensaje: '10/2/25, el cumple de kitty ^_^' },
   { src: foto16, alt: 'Foto 16', mensaje: '16/8/24, primer día de pinguino!' },
+  { src: foto17, alt: 'Foto 17', mensaje: '🌸' },
+  { src: foto18, alt: 'Foto 18', mensaje: '🌸' },
+  { src: foto19, alt: 'Foto 19', mensaje: '🌸' },
+  { src: foto20, alt: 'Foto 20', mensaje: '🌸' },
+  { src: foto21, alt: 'Foto 21', mensaje: '🌸' },
+  { src: foto22, alt: 'Foto 22', mensaje: '🌸' },
 ];
 
 function App() {
