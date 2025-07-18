@@ -14,6 +14,15 @@
   padding-bottom: 38px;
 }
 
+@media (max-width: 768px) {
+  .photo-frame {
+    margin: 16px 12px 24px 12px;
+    max-width: 180px;
+    min-width: 100px;
+    padding-bottom: 30px;
+  }
+}
+
 .photo-frame::before {
   display: none;
 }
@@ -26,6 +35,12 @@
   border-radius: 0;
   padding: 12px 12px 0 12px;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .photo-frame-inner {
+    padding: 8px 8px 0 8px;
+  }
 }
 
 .photo-frame-img {

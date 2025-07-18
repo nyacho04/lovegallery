@@ -1,33 +1,33 @@
 import PhotoFrame from './components/PhotoFrame';
 import penguin from './assets/penguin.webp';
-import muneco1 from './assets/muñeco1.png';
-import muneco2 from './assets/muñeco2.png';
+import muneco1 from './assets/muñeco1.webp';
+import muneco2 from './assets/muñeco2.webp';
 import snoopy1 from './assets/snoopy1.webp';
 import snoopy2 from './assets/snoopy2.webp';
-import foto1 from './assets/foto1.jpg';
-import foto2 from './assets/foto2.jpg';
-import foto3 from './assets/foto3.jpg';
-import foto4 from './assets/foto4.jpg';
-import foto5 from './assets/foto5.jpg';
-import foto6 from './assets/foto6.jpg';
-import foto7 from './assets/foto7.jpg';
-import foto8 from './assets/foto8.jpg';
-import foto9 from './assets/foto9.jpg';
-import foto10 from './assets/foto10.jpg';
-import foto11 from './assets/foto11.jpg';
-import foto12 from './assets/foto12.jpg';
-import foto13 from './assets/foto13.jpg';
-import foto14 from './assets/foto14.jpg';
-import foto15 from './assets/foto15.jpg';
-import foto16 from './assets/foto16.jpg';
-import foto17 from './assets/foto17.jpg';
-import foto18 from './assets/foto18.jpg';
-import foto19 from './assets/foto19.jpg';
-import foto20 from './assets/foto20.jpg';
-import foto21 from './assets/foto21.jpg';
-import foto22 from './assets/foto22.jpg';
-import kitty1 from './assets/kitty1.png';
-import kitty2 from './assets/kitty2.png';
+import foto1 from './assets/foto1.webp';
+import foto2 from './assets/foto2.webp';
+import foto3 from './assets/foto3.webp';
+import foto4 from './assets/foto4.webp';
+import foto5 from './assets/foto5.webp';
+import foto6 from './assets/foto6.webp';
+import foto7 from './assets/foto7.webp';
+import foto8 from './assets/foto8.webp';
+import foto9 from './assets/foto9.webp';
+import foto10 from './assets/foto10.webp';
+import foto11 from './assets/foto11.webp';
+import foto12 from './assets/foto12.webp';
+import foto13 from './assets/foto13.webp';
+import foto14 from './assets/foto14.webp';
+import foto15 from './assets/foto15.webp';
+import foto16 from './assets/foto16.webp';
+import foto17 from './assets/foto17.webp';
+import foto18 from './assets/foto18.webp';
+import foto19 from './assets/foto19.webp';
+import foto20 from './assets/foto20.webp';
+import foto21 from './assets/foto21.webp';
+import foto22 from './assets/foto22.webp';
+import kitty1 from './assets/kitty1.webp';
+import kitty2 from './assets/kitty2.webp';
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import cancion from './assets/Monsieur Periné - Nuestra Canción.mp3';
@@ -189,7 +189,6 @@ function App() {
 
   return (
     <div className={"collage-layout" + (fadeIn ? " fade-in" : "") }>
-      {}
       <div className="side-sparkles left">
         <span className="sparkle star"></span>
         <span className="sparkle circle"></span>
@@ -204,7 +203,6 @@ function App() {
         <span className="sparkle circle"></span>
         <span className="sparkle star"></span>
       </div>
-      {}
       {modalOpen && (
         <div className="photo-modal" onClick={closeModal}>
           <div className={`photo-modal-content ${modalAnim}`} onClick={e => e.stopPropagation()}>
@@ -275,7 +273,6 @@ function App() {
             </button>
           </div>
         </div>
-        {}
       </div>
       <div className="frames-container fade-in">
         {fotos.map((foto, idx) => (
@@ -288,12 +285,10 @@ function App() {
           />
         ))}
       </div>
-      {}
       <img src={muneco1} alt="Sticker Muñeco 1" className="sticker sticker-1 fade-in" />
       <img src={muneco2} alt="Sticker Muñeco 2" className="sticker sticker-2 fade-in" />
       <img src={snoopy1} alt="Snoopy corazón" className="snoopy snoopy-left fade-in" />
       <img src={snoopy2} alt="Snoopy abrazo" className="snoopy snoopy-right fade-in" />
-      {}
       <img src={kitty1} alt="Kitty 1" className="kitty-sticker kitty-1 fade-in" />
       <img src={kitty2} alt="Kitty 2" className="kitty-sticker kitty-2 fade-in" />
     </div>
