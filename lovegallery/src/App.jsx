@@ -26,6 +26,7 @@ import foto19 from './assets/foto19.webp';
 import foto20 from './assets/foto20.webp';
 import foto21 from './assets/foto21.webp';
 import foto22 from './assets/foto22.webp';
+import foto23 from './assets/foto23.webp';
 import kitty1 from './assets/kitty1.webp';
 import kitty2 from './assets/kitty2.webp';
 import './App.css';
@@ -56,6 +57,7 @@ const fotos = [
   { src: foto20, alt: 'Foto 20', mensaje: '🌸' },
   { src: foto21, alt: 'Foto 21', mensaje: '🌸' },
   { src: foto22, alt: 'Foto 22', mensaje: '🌸' },
+  { src: foto23, alt: 'Foto 23', mensaje: '🌸' },
 ];
 
 function App() {
