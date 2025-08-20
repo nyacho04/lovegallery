@@ -17,6 +17,25 @@ body {
   overflow-x: hidden;
 }
 
+/* Estilos globales para botones en móvil */
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  outline: none;
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -518,6 +537,29 @@ body.scrolled::after {
   transform: scale(1.08);
 }
 
+/* Estilos específicos para móvil - botón cerrar */
+@media (max-width: 768px) {
+  .photo-modal-close {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  .photo-modal-close:focus {
+    outline: none !important;
+    box-shadow: 0 1px 4px #ffb3c644 !important;
+  }
+  
+  .photo-modal-close:active {
+    outline: none !important;
+    box-shadow: 0 1px 4px #ffb3c644 !important;
+  }
+}
+
 .photo-modal-next {
   margin-top: 8px;
   background: #ffb3c6;
@@ -536,6 +578,29 @@ body.scrolled::after {
   background: #ff4d7a;
   color: #fff;
   transform: scale(1.07);
+}
+
+/* Estilos específicos para móvil - botón next */
+@media (max-width: 768px) {
+  .photo-modal-next {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  .photo-modal-next:focus {
+    outline: none !important;
+    box-shadow: 0 2px 8px #ffb3c688 !important;
+  }
+  
+  .photo-modal-next:active {
+    outline: none !important;
+    box-shadow: 0 2px 8px #ffb3c688 !important;
+  }
 }
 
 .photo-modal-nav {
@@ -574,6 +639,32 @@ body.scrolled::after {
   background: #ffb3c6;
   color: #fff;
   transform: scale(1.07);
+}
+
+/* Estilos específicos para móvil - botones prev/next */
+@media (max-width: 768px) {
+  .photo-modal-prev,
+  .photo-modal-next {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  .photo-modal-prev:focus,
+  .photo-modal-next:focus {
+    outline: none !important;
+    box-shadow: 0 2px 8px #ffe6fb88 !important;
+  }
+  
+  .photo-modal-prev:active,
+  .photo-modal-next:active {
+    outline: none !important;
+    box-shadow: 0 2px 8px #ffe6fb88 !important;
+  }
 }
 
 .sticker-1, .sticker-2 {
@@ -733,11 +824,61 @@ body.scrolled::after {
   box-shadow: 0 2px 8px #ffe6fb88;
   transition: background 0.2s, color 0.2s, transform 0.15s;
   min-width: 140px;
+  
+  /* Eliminar outline azul y estado seleccionado en móvil */
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  /* Prevenir selección de texto en móvil */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
 .photo-modal-nav-btn:hover {
   background: #ffb3c6;
   color: #fff;
   transform: scale(1.07);
+}
+
+/* Estilos específicos para móvil */
+@media (max-width: 768px) {
+  .photo-modal-nav-btn {
+    /* Eliminar efectos de selección en móvil */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* Prevenir outline en móvil */
+    outline: none !important;
+    
+    /* Asegurar que no haya bordes azules */
+    border: none !important;
+    box-shadow: 0 2px 8px #ffe6fb88 !important;
+  }
+  
+  .photo-modal-nav-btn:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0 2px 8px #ffe6fb88 !important;
+  }
+  
+  .photo-modal-nav-btn:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0 2px 8px #ffe6fb88 !important;
+  }
 }
 
 .kitty-sticker {
@@ -902,6 +1043,29 @@ body.scrolled::after {
   }
 }
 
+/* Estilos adicionales para móvil - eliminar outline azul */
+@media (max-width: 768px) {
+  .mute-btn {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  .mute-btn:focus {
+    outline: none !important;
+    box-shadow: 0 1px 4px #ffb3c644 !important;
+  }
+  
+  .mute-btn:active {
+    outline: none !important;
+    box-shadow: 0 1px 4px #ffb3c644 !important;
+  }
+}
+
 .music-message-container {
   position: fixed !important;
   top: 18px !important;
@@ -1029,4 +1193,60 @@ body.scrolled::after {
 * {
   scrollbar-width: thin;
   scrollbar-color: #ffb3c6 rgba(255, 179, 198, 0.1);
+}
+
+/* Estilos adicionales para móvil - prevenir selección y outline */
+@media (max-width: 768px) {
+  /* Prevenir selección de texto en toda la aplicación en móvil */
+  * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Permitir selección solo en elementos de texto específicos si es necesario */
+  p, span, div {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  /* Asegurar que todos los botones no tengan outline en móvil */
+  button, 
+  .photo-modal-nav-btn,
+  .photo-modal-close,
+  .photo-modal-prev,
+  .photo-modal-next,
+  .mute-btn {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    border: none !important;
+  }
+  
+  /* Prevenir el comportamiento de selección en botones */
+  button:focus,
+  button:active,
+  .photo-modal-nav-btn:focus,
+  .photo-modal-nav-btn:active,
+  .photo-modal-close:focus,
+  .photo-modal-close:active,
+  .photo-modal-prev:focus,
+  .photo-modal-prev:active,
+  .photo-modal-next:focus,
+  .photo-modal-next:active,
+  .mute-btn:focus,
+  .mute-btn:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+  }
 }
