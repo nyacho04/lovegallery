@@ -27,6 +27,7 @@ import foto20 from './assets/foto20.webp';
 import foto21 from './assets/foto21.webp';
 import foto22 from './assets/foto22.webp';
 import foto23 from './assets/foto23.webp';
+import foto24 from './assets/foto24.webp';
 import kitty1 from './assets/kitty1.webp';
 import kitty2 from './assets/kitty2.webp';
 import './App.css';
@@ -58,6 +59,7 @@ const fotos = [
   { src: foto21, alt: 'Foto 21', mensaje: '🌸' },
   { src: foto22, alt: 'Foto 22', mensaje: '🌸' },
   { src: foto23, alt: 'Foto 23', mensaje: '🌸' },
+  { src: foto24, alt: 'Foto 24', mensaje: '🌸' },
 ];
 
 function App() {
@@ -187,6 +189,11 @@ function App() {
       audio.play().then(() => setAudioError(false));
     }
     setMuted(m => !m);
+    
+    // Feedback táctil para móvil
+    if ('vibrate' in navigator) {
+      navigator.vibrate(50);
+    }
   };
 
   return (
@@ -232,7 +239,8 @@ function App() {
           <span className="sparkle star"></span>
         </div>
         <div className="cloud-bubble">
-            Hola mi amor, bienvenida a nuestra galeria! este es el espacio en el cual vas a poder ver los recuerditos que hemos sacado durante nuestra relación. Cada fotito tiene una nota graciosa, podes verla dándole click! Espero que te guste. Te ama mucho - nani
+            Hola mi amor, bienvenida a nuestra galeria! este es el espacio en el cual vas a poder ver los recuerditos que hemos sacado durante nuestra relación. Cada fotito tiene una nota graciosa, podes verla dándole click! Espero que te guste.
+            <div className="penguin-signature">Te ama mucho - nani</div>
           <div className="sparkles sparkles-bubble">
             <span className="sparkle star"></span>
             <span className="sparkle circle"></span>
@@ -251,30 +259,6 @@ function App() {
           onClick={handlePenguinJump}
           style={{ cursor: 'pointer' }}
         />
-        <div style={{ display: 'flex', alignItems: 'center', position: 'fixed', top: 18, right: 18, zIndex: 1002 }}>
-          {showMusicMsg && (
-            <span style={{ color: 'white', marginRight: 16, fontFamily: 'Gloria Hallelujah, cursive', fontSize: '1.1em', textShadow: '1px 1px 4px #000a', transition: 'opacity 0.5s' }}>
-              ¡No olvides activar la música!
-            </span>
-          )}
-          <div className={"mute-btn-container"} style={{ position: 'static' }}>
-            <button className="mute-btn" onClick={toggleMute} aria-label={muted ? "Activar música" : "Mutear música"}>
-              {muted ? (
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 7V13H7L12 18V2L7 7H3Z" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <line x1="15" y1="7" x2="19" y2="13" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
-                  <line x1="19" y1="7" x2="15" y2="13" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 7V13H7L12 18V2L7 7H3Z" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 8C15.6667 8.66667 16 9.33333 16 10C16 10.6667 15.6667 11.3333 15 12" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M17 6C18.3333 7.33333 19 8.66667 19 10C19 11.3333 18.3333 12.6667 17 14" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
       </div>
       <div className="frames-container fade-in">
         {fotos.map((foto, idx) => (
@@ -293,6 +277,35 @@ function App() {
       <img src={snoopy2} alt="Snoopy abrazo" className="snoopy snoopy-right fade-in" />
       <img src={kitty1} alt="Kitty 1" className="kitty-sticker kitty-1 fade-in" />
       <img src={kitty2} alt="Kitty 2" className="kitty-sticker kitty-2 fade-in" />
+      
+      {/* Mensaje de música y botón de mute - Posicionado al final para máximo z-index */}
+      <div className="music-message-container">
+        <span className={`music-message-text ${showMusicMsg ? 'show' : 'hide'}`}>
+          ¡No olvides activar la música!
+        </span>
+        <div className="mute-btn-container">
+          <button className="mute-btn" onClick={toggleMute} aria-label={muted ? "Activar música" : "Mutear música"}>
+            {muted ? (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7V13H7L12 18V2L7 7H3Z" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="15" y1="7" x2="19" y2="13" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="19" y1="7" x2="15" y2="13" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7V13H7L12 18V2L7 7H3Z" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 8C15.6667 8.66667 16 9.33333 16 10C16 10.6667 15.6667 11.3333 15 12" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M17 6C18.3333 7.33333 19 8.66667 19 10C19 11.3333 18.3333 12.6667 17 14" stroke="#a14d4d" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+      
+      {/* Pie de página */}
+      <footer className="page-footer">
+        <span className="footer-text">21/03/24 - :3</span>
+      </footer>
     </div>
   );
 }
